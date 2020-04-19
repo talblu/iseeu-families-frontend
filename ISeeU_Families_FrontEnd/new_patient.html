@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
 		linkcrossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles/patient_info.css">
+	<link rel="stylesheet" type="text/css" href="styles/spinner.css">
 	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
@@ -17,6 +18,7 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/new_patient.js"></script>
+	<script type="text/javascript" src="js/spinner.js"></script>
 </head>
 
 <body>
@@ -26,27 +28,21 @@
 				<div class="form_container">
 					<form>
 					  <div class="form-row">
-					    <div class="form-group col-md-6">
-						    <label for="hospital">בית חולים</label>
-						    <input type="text" class="form-control" id="hospital" disabled>
-						</div>
-					    <div class="form-group col-md-6">
-					      <label for="patient_id">מזהה המטופל/ת</label>
-					      <input type="text" class="form-control" id="patient_id">
-					    </div>
-					  </div>
-					  <div class="form-row">
 						  <div class="form-group col-md-6">
 						    <label for="phone_list">מספרי טלפון של המשפחה מופרדים ע״י פסיק</label>
 						    <input type="text" class="form-control" id="phone_list">
 						  </div>
-						  <div class="form-group col-md-6">
-					      	<label for="name">שם ושם משפחת המטופל/ת</label>
+						  <div class="form-group col-md-3">
+					      	<label for="name">ראשי תיבות המטופל/ת</label>
 					      	<input type="text" class="form-control" id="name">
 					      </div>
+						  <div class="form-group col-md-3">
+							  <label for="patient_id">מזהה המטופל/ת</label>
+							  <input type="text" class="form-control" id="patient_id">
+						  </div>
 					  </div>
 					  <div class="form-group">
-					    <label for="med_internal_comments">הערות פנימיות</label>
+					    <label for="med_internal_comments">הערות פנימיות (לא נשלח למשפחה)</label>
 					    <textarea dir="rtl" class="form-control" id="med_internal_comments" rows="2"></textarea>
 					  </div>
 					  <div class="form-row">
@@ -75,7 +71,7 @@
 					        <option value=""></option>
 					        <option value="המטופל/ת בהכרה מלאה">המטופל/ת בהכרה מלאה</option>
 					        <option value="המטופל/ת בהכרה מעורפלת">המטופל/ת בהכרה מעורפלת</option>
-					        <option value="המטופל/ת מוקדם/ת">המטופל/ת מוקדם/ת</option>
+					        <option value="המטופל/ת מורדם/ת">המטופל/ת מורדם/ת</option>
 					      </select>
 					    </div>
 					    <div class="form-group col-md-2">
@@ -127,7 +123,7 @@
 						</div>
 					  </div>
 					  <div class="form-group">
-					    <label for="med_general">הערות כלליות</label>
+					    <label for="med_general">הערות כלליות (נשלח למשפחה)</label>
 					    <textarea dir="rtl" class="form-control" id="med_general" rows="2"></textarea>
 					  </div>
 					  <div class="form-row">

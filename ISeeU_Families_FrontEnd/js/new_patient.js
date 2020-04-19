@@ -4,10 +4,6 @@ const dataToSend = {};
 dataToSend.token = sessionStorage.getItem('token');
 dataToSend.hospital = hospital;
 
-$(document).ready(function() {
-	document.getElementById('hospital').value = hospital;
-});
-
 async function executeAction(action) {
 	let response = await fetch(`https://api.spetz.online:4040/icu/patients/update_patient`,{
 		method: 'POST',

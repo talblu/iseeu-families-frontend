@@ -18,17 +18,16 @@ async function login ()
 			body: JSON.stringify(userData)
 		});
 
-		let data = await response.json();
-
-		if (data.success) {
-			sessionStorage.setItem('hospital', userData.hospital);
-			sessionStorage.setItem('token', data.jwt_token);
-			location.href = `main.html`;
-		}
-		else {
-			document.getElementById('error').innerHTML = "משתמש לא קיים במערכת, אנא נסה/י שוב";
-			document.getElementById('error').style = 'display: block';
-		}
+		if (response.status != 200) {
+            document.getElementById('error').innerHTML = "משתמש לא קיים במערכת, אנא נסה/י שוב";
+            document.getElementById('error').style = 'display: block';
+        }
+        else {
+		    let data = await response.json();
+            sessionStorage.setItem('hospital', userData.hospital);
+            sessionStorage.setItem('token', data.token);
+            location.href = `main.html`;
+        }
 	}
 }
 

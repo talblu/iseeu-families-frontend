@@ -2,7 +2,10 @@ const hospital = location.href.substring(8, location.href.indexOf('.'));
 
 const dataToSend = {};
 dataToSend.token = sessionStorage.getItem('token');
-dataToSend.hospital = hospital;
+// dataToSend.hospital = hospital;
+dataToSend.hospital = 'zedek';
+
+console.log(dataToSend);
 
 getAllPatients();
 
