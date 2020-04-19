@@ -45,5 +45,5 @@ const createPatient = async () => {
 	await executeAction('update_patient');
 	alert('המטופל/ת נוצר/ה בהצלחה!');
 	localStorage.removeItem('patient_id');
-	location.href = `../main.html`;
+	location.href = `/main.html`;
 }
