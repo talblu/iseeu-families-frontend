@@ -60,17 +60,15 @@ const updatePatient = async () => {
 	const form = document.querySelectorAll('.form-control');
 	dataToSend.medical_info = {};
 	for (let input of form) {
-		if (input.value !== "") {
-			if (input.id.startsWith('med_'))
-				dataToSend.medical_info[input.id.substring(4)] = input.value;
-			else {
-				if (input.id === 'phone_list') {
-					input.value = input.value.replace(/\s/g,'');
-					dataToSend[input.id] = input.value.split(',');
-				}
-				else
-					dataToSend[input.id] = input.value;
+		if (input.id.startsWith('med_'))
+			dataToSend.medical_info[input.id.substring(4)] = input.value;
+		else {
+			if (input.id === 'phone_list') {
+				input.value = input.value.replace(/\s/g,'');
+				dataToSend[input.id] = input.value.split(',');
 			}
+			else
+				dataToSend[input.id] = input.value;
 		}
 	}
 	await executeAction('update_patient');
