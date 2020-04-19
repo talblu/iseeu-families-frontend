@@ -1,7 +1,6 @@
 const hospital = location.href.substring(8, location.href.indexOf('.'));
 
 const dataToSend = {};
-dataToSend.token = sessionStorage.getItem('token');
 dataToSend.hospital = hospital;
 
 getAllPatients();
@@ -12,7 +11,8 @@ async function getAllPatients() {
 		headers: {
 			'Access-Control-Allow-Origin': '*',
 			'Accept': 'application/json',
-	  		'Content-Type': 'application/json'
+	  		'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
 		},
 		body: JSON.stringify(dataToSend)
 	});

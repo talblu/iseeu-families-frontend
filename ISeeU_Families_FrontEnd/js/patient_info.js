@@ -25,11 +25,12 @@ async function init() {
 async function executeAction(action) {
 	let response = await fetch(`https://api.spetz.online:4040/icu/patients/${action}`,{
 		method: 'POST',
-		headers: {
-			'Access-Control-Allow-Origin': '*',
-			'Accept': 'application/json',
-	  		'Content-Type': 'application/json'
-		},
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+        },
 		body: JSON.stringify(dataToSend)
 	});
 
