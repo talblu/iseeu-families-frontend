@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title>ISeeU - New Patient</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+		linkcrossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../styles/patient_info.css">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/new_patient.js"></script>
+</head>
+
+<body>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="form_container">
+					<form>
+					  <div class="form-row">
+					    <div class="form-group col-md-6">
+						    <label for="hospital">בית חולים</label>
+						    <input type="text" class="form-control" id="hospital" disabled>
+						</div>
+					    <div class="form-group col-md-6">
+					      <label for="patient_id">מזהה המטופל/ת</label>
+					      <input type="text" class="form-control" id="patient_id">
+					    </div>
+					  </div>
+					  <div class="form-row">
+						  <div class="form-group col-md-6">
+						    <label for="phone_list">מספרי טלפון של המשפחה מופרדים ע״י פסיק</label>
+						    <input type="text" class="form-control" id="phone_list">
+						  </div>
+						  <div class="form-group col-md-6">
+					      	<label for="name">שם ושם משפחת המטופל/ת</label>
+					      	<input type="text" class="form-control" id="name">
+					      </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="med_internal_comments">הערות פנימיות</label>
+					    <textarea dir="rtl" class="form-control" id="med_internal_comments" rows="2"></textarea>
+					  </div>
+					  <div class="form-row">
+						  <div class="form-group col-md-6">
+						    <label for="med_nurse">אח/ות מטפל/ת</label>
+						    <input type="text" class="form-control" id="med_nurse">
+						  </div>
+						  <div class="form-group col-md-6">
+						    <label for="med_doctor">רופא/ה מטפל/ת</label>
+						    <input type="text" class="form-control" id="med_doctor">
+						  </div>
+					  </div>
+					  <div class="form-row">
+					  	<div class="form-group col-md-5">
+					      <label for="med_is_on_respirator">מצב נשימתי</label>
+					      <select id="med_is_on_respirator" class="form-control">
+                    		<option value=""></option>
+                    		<option value="המטופל/ת לא זקוק/ה לתמיכה נשימתית">המטופל/ת לא זקוק/ה לתמיכה נשימתית</option><option value="המטופל/ת נושמ/ת בכוחות עצמו/ה ומקבל/ת העשרה של חמצן">המטופל/ת נושמ/ת בכוחות עצמו/ה ומקבל/ת העשרה של חמצן</option>
+                    		<option value="המטופל/ת נושם/ת בעזרת מסכה שעוזרת בפעולת הנשימה">המטופל/ת נושם/ת בעזרת מסכה שעוזרת בפעולת הנשימה</option>
+                    		<option value="המטופל/ת מורדמ/ת ומונשמ/ת - הוא/היא נושם/ת בעזרת מכונת הנשמה">המטופל/ת מורדמ/ת ומונשמ/ת - הוא/היא נושם/ת בעזרת מכונת הנשמה</option>
+                    	  </select>
+					    </div>
+					    <div class="form-group col-md-3">
+					      <label for="med_is_awake">מצב הכרה</label>
+					      <select id="med_is_awake" class="form-control">
+					        <option value=""></option>
+					        <option value="המטופל/ת בהכרה מלאה">המטופל/ת בהכרה מלאה</option>
+					        <option value="המטופל/ת בהכרה מעורפלת">המטופל/ת בהכרה מעורפלת</option>
+					        <option value="המטופל/ת מוקדם/ת">המטופל/ת מוקדם/ת</option>
+					      </select>
+					    </div>
+					    <div class="form-group col-md-2">
+					      <label for="med_tendancy">מגמה</label>
+					      <select id="med_tendancy" class="form-control">
+					        <option value=""></option>
+					        <option value="יציב">יציב</option>
+					        <option value="במגמת שיפור">במגמת שיפור</option>
+					        <option value="ללא שינוי">ללא שינוי</option>
+					      </select>
+					    </div>
+					    <div class="form-group col-md-2">
+					      <label for="med_condition">מצב רפואי</label>
+					      <select id="med_condition" class="form-control">
+					        <option value=""></option>
+					        <option value="קל">קל</option>
+					        <option value="בינוני">בינוני</option>
+					        <option value="קשה">קשה</option>
+					      </select>
+					    </div>
+					  </div>
+					  <div class="form-row">
+					    <div class="form-group col-md-4">
+						  	<label for="med_is_in_pain">רמת כאב</label>
+						    <select id="med_is_in_pain" class="form-control">
+			                    <option value=""></option>
+			                    <option value="המטופל/ת אינו/ה סובל/ת מכאבים">המטופל/ת אינו/ה סובל/ת מכאבים</option>
+			                    <option value="המטופל/ת מקבל/ת משככי כאבי כדי שלא י/תסבול מכאב">המטופל/ת מקבל/ת משככי כאבי כדי שלא י/תסבול מכאב</option>
+			                    <option value="המטופל/ת דיווח/ה על כאבים וקיבל/ה תרופות לשיכוך הכאב">המטופל/ת דיווח/ה על כאבים וקיבל/ה תרופות לשיכוך הכאב</option>
+	                		</select>
+	                	</div>
+						<div class="form-group col-md-4">
+							<label for="med_eat_drink">האם המטופל/ת יכול/ה לאכול או לשתות?</label>
+							<select id="med_eat_drink" class="form-control">
+			                    <option value=""></option>
+			                    <option value="המטופל/ת יכול/ה לאכול ולשתות באופן עצמוני">המטופל/ת יכול/ה לאכול ולשתות באופן עצמוני</option>
+		                        <option value="המטופל/ת איננו מסוגל לאכול בכוחות עצמה/ו ואנו עוזרים לה/ו לקבל תזונה">המטופל/ת איננו מסוגל לאכול בכוחות עצמה/ו ואנו עוזרים לה/ו לקבל תזונה</option>
+		                        <option value="המטופל/ת איננו/ה מסוגל/ת לאכול ולשתות כרגע עקב מצבו/ה">המטופל/ת איננו/ה מסוגל/ת לאכול ולשתות כרגע עקב מצבו/ה</option>
+			                </select>
+						</div>
+						<div class="form-group col-md-4">
+							<label for="med_next_step">האם המטופל/ת יכול/ה לאכול או לשתות?</label>
+							<select id="med_next_step" class="form-control">
+			                    <option value=""></option>
+			                    <option value="המשך מעקב רפואי אחר מצבו/ה הבריאותי">המשך מעקב רפואי אחר מצבו/ה הבריאותי</option>
+			                    <option value="לאור השיפור במצבו/ה אנו באופטימיות זהירה לקראת שחרור אפשרי בימים הקרובים">לאור השיפור במצבו/ה אנו באופטימיות זהירה לקראת שחרור אפשרי בימים הקרובים</option>
+			                    <option value="אנו ממשיכים לעשות את כל שביכולתנו על מנת לייצב ולשפר את מצב יקירכם, ומקווים לראות שיפור במצבו/ה">אנו ממשיכים לעשות את כל שביכולתנו על מנת לייצב ולשפר את מצב יקירכם, ומקווים לראות שיפור במצבו/ה</option>
+               			 	</select>
+						</div>
+					  </div>
+					  <div class="form-group">
+					    <label for="med_general">הערות כלליות</label>
+					    <textarea dir="rtl" class="form-control" id="med_general" rows="2"></textarea>
+					  </div>
+					  <div class="form-row">
+						  <div class="form-group col-md-12 d-flex justify-content-center mt-2 btn_container">
+							<button type="button" data-toggle="modal" data-target="#create_modal" id="create_btn" class="btn submit_btn">צור מטופל/ת</button>
+						  </div>
+					  </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="create_modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog-centered modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">יצירת מטופל/ת</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <p id="modal_text">האם את/ה בטוח/ה שברצונך ליצור את המטופל/ת?</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button id="confirm_edit" type="button" class="btn btn-primary"  onclick="createPatient()">כן, אני בטוח/ה</button>
+	        <button id="cancel_edit" type="button" class="btn btn-secondary" data-dismiss="modal">ביטול</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</body>
+</html>

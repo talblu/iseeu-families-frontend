@@ -1,0 +1,105 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #60a3bc !important;
+}
+
+label, input, select, p, .modal-header {
+	direction: rtl;
+	float: right;
+	text-align: right;
+}
+
+.modal-content .modal-header .close {
+	margin-left: 0;
+}
+
+label {
+	margin-right: 0.4em;
+}
+
+#heading {
+	font-family: 'Pacifico', cursive;
+	margin: 20px;
+	color: #4d8bc9;
+	letter-spacing: 2px;
+}
+
+.user_card {
+	overflow: scroll;
+	height: 92%;
+	width: 92%;
+	margin-top: auto;
+	margin-bottom: auto;
+	background: #cfe8e1;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 5px;
+}
+
+.form_container {
+	margin-top: 8px;
+	padding: 0 10px;
+	height: 100%;
+}
+
+p.headings {
+	text-align: center;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 25px;
+	color: #60a3bc;
+	margin-top: 1rem;
+}
+
+.btn.submit_btn {
+	width: 250px;
+	background: #60a3bc;
+	color: white;
+	border-radius: 50px;
+}
+
+.patients_list {
+	width: 250px;
+	border: 0px;
+	outline: none;
+	background: #edf4fc;
+}
+
+.patients_list_container {
+	border-radius: 36px;
+	border:1px solid #cccccc;
+	height: 38px;
+	width: 250px;
+	display: inline-block;
+		overflow: hidden;
+		margin: auto;
+}
+
+.submit_container {
+	padding: 0 2rem;
+}
+
+.brand_logo_container {
+	position: absolute;
+	height: 170px;
+	width: 170px;
+	top: -75px;
+	border-radius: 50%;
+	background: #60a3bc;
+	padding: 10px;
+	text-align: center;
+}
+
+.brand_logo {
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	border: 2px solid white;
+}
