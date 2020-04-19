@@ -20,7 +20,7 @@ async function login ()
 		let data = await response.json();
 		if (data.success) {
 			localStorage.setItem('hospital', userData.hospital);
-			location.href = `../html/main.html?hospital=${userData.hospital}`;
+			location.href = `../main.html`;
 		}
 		else {
 			document.getElementById('error').innerHTML = "משתמש לא קיים במערכת, אנא נסה/י שוב";

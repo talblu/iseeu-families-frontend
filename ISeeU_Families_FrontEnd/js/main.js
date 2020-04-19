@@ -33,10 +33,10 @@ const getPatient = () => {
 	localStorage.setItem('patient_id',patientId);
 	// localStorage.setItem('hospital', hospital);
 	// location.href = `../html/patient_info.html?patientId=${patientId}&hospital=${hospital}`;
-	location.href = `../html/patient_info.html`;
+	location.href = `../patient_info.html`;
 }
 
 const newPatient = () => {
 	// location.href = `../html/new_patient.html?hospital=${hospital}`;
-	location.href = `../html/new_patient.html`;
+	location.href = `../new_patient.html`;
 }

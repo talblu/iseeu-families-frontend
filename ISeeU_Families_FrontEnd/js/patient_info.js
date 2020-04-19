@@ -53,7 +53,7 @@ const deletePatient = async () => {
 		alert('המטופל אינו קיים במערכת, אנא נסו שנית');
 	}
 	localStorage.removeItem('patient_id');
-	location.href = `../html/main.html`;
+	location.href = `../main.html`;
 }
 
 const updatePatient = async () => {
@@ -76,5 +76,5 @@ const updatePatient = async () => {
 	await executeAction('update_patient');
 	alert('העדכון בוצע בהצלחה!');
 	localStorage.removeItem('patient_id');
-	location.href = `../html/main.html`;
+	location.href = `../main.html`;
 }
