@@ -4,7 +4,7 @@ const dataToSend = {};
 dataToSend.token = sessionStorage.getItem('token');
 dataToSend.hospital = hospital;
 
-async function executeAction(action) {
+async function executeAction() {
 	let response = await fetch(`https://api.spetz.online:4040/icu/patients/update_patient`,{
 		method: 'POST',
 		headers: {
@@ -41,7 +41,7 @@ const createPatient = async () => {
 		}
 	}
 
-	await executeAction('update_patient');
+	await executeAction();
 	alert('המטופל/ת נוצר/ה בהצלחה!');
 	sessionStorage.removeItem('patient_id');
 	location.href = `main.html`;

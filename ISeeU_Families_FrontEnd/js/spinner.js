@@ -1,8 +1,23 @@
 function onReady(callback) {
-    var intervalID = window.setInterval(checkReady, 1000);
+    let intervalID = window.setInterval(checkReady, 1000);
+    let element = null;
 
     function checkReady() {
-        if (document.getElementsByTagName('body')[0] !== undefined) {
+        if (location.href.indexOf('main') !== -1) {
+            element = document.getElementById('patients_list');
+        }
+        else if (location.href.indexOf('patient_info') !== -1) {
+            element = document.getElementById('patient_id');
+        }
+        else {
+            element = document.getElementsByTagName('body')[0];
+            if (element !== undefined) {
+                window.clearInterval(intervalID);
+                callback.call(this);
+                return;
+            }
+        }
+        if (element !== undefined && element.value !== "") {
             window.clearInterval(intervalID);
             callback.call(this);
         }
