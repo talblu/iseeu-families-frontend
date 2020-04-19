@@ -17,9 +17,12 @@ async function login ()
 			},
 			body: JSON.stringify(userData)
 		});
+
 		let data = await response.json();
+
 		if (data.success) {
-			localStorage.setItem('hospital', userData.hospital);
+			sessionStorage.setItem('hospital', userData.hospital);
+			sessionStorage.setItem('token', data.jwt_token);
 			location.href = `main.html`;
 		}
 		else {
@@ -43,10 +46,12 @@ const isValidEmail = email => {
 const isInputValid = (email, password, hospital) => {
 	if (!isValidEmail(email))
 		return false;
+
 	if (password === "" || hospital === "בחר/י בית חולים") {
 		document.getElementById('error').innerHTML = "יש למלא את כל השדות";
 		document.getElementById('error').style = 'display: block';
 		return false;
 	}
+
 	return true;
 }

@@ -1,6 +1,7 @@
 const hospital = location.href.substring(8, location.href.indexOf('.'));
 
 const dataToSend = {};
+dataToSend.token = sessionStorage.getItem('token');
 dataToSend.hospital = hospital;
 
 $(document).ready(function() {
@@ -17,6 +18,11 @@ async function executeAction(action) {
 		},
 		body: JSON.stringify(dataToSend)
 	});
+
+    if (response.status == 401) {
+        sessionStorage.clear();
+        location.href = `login.html`;
+    }
 
 	return response;
 }
@@ -41,6 +47,6 @@ const createPatient = async () => {
 
 	await executeAction('update_patient');
 	alert('המטופל/ת נוצר/ה בהצלחה!');
-	localStorage.removeItem('patient_id');
+	sessionStorage.removeItem('patient_id');
 	location.href = `main.html`;
 }

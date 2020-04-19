@@ -1,6 +1,7 @@
 const hospital = location.href.substring(8, location.href.indexOf('.'));
 
 const dataToSend = {};
+dataToSend.token = sessionStorage.getItem('token');
 dataToSend.hospital = hospital;
 
 getAllPatients();
@@ -15,6 +16,12 @@ async function getAllPatients() {
 		},
 		body: JSON.stringify(dataToSend)
 	});
+
+	if (response.status == 401) {
+		sessionStorage.clear();
+        location.href = `login.html`;
+    }
+
 	let data = await response.json();
 	let patientsList = document.getElementById("patients_list");
 	data.forEach(patient => {
@@ -28,13 +35,10 @@ async function getAllPatients() {
 
 const getPatient = () => {
 	const patientId = document.getElementById("patients_list").value;
-	localStorage.setItem('patient_id',patientId);
-	// localStorage.setItem('hospital', hospital);
-	// location.href = `../html/patient_info.html?patientId=${patientId}&hospital=${hospital}`;
+	sessionStorage.setItem('patient_id',patientId);
 	location.href = `patient_info.html`;
 }
 
 const newPatient = () => {
-	// location.href = `../html/new_patient.html?hospital=${hospital}`;
 	location.href = `new_patient.html`;
 }

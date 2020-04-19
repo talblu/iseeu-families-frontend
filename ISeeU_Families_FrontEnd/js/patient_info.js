@@ -1,7 +1,8 @@
 const hospital = location.href.substring(8, location.href.indexOf('.'));
-const patientId = localStorage.getItem('patient_id');
+const patientId = sessionStorage.getItem('patient_id');
 
 const dataToSend = {};
+dataToSend.token = sessionStorage.getItem('token');
 dataToSend.patient_id = patientId;
 dataToSend.hospital = hospital;
 
@@ -32,6 +33,11 @@ async function executeAction(action) {
 		body: JSON.stringify(dataToSend)
 	});
 
+    if (response.status == 401) {
+        sessionStorage.clear();
+        location.href = `login.html`;
+    }
+
 	if (action === 'update_patient' || action === 'delete_patient') {
 		return response;
 	}
@@ -49,7 +55,7 @@ const deletePatient = async () => {
 	else {
 		alert('המטופל אינו קיים במערכת, אנא נסו שנית');
 	}
-	localStorage.removeItem('patient_id');
+	sessionStorage.removeItem('patient_id');
 	location.href = `main.html`;
 }
 
@@ -72,6 +78,6 @@ const updatePatient = async () => {
 	}
 	await executeAction('update_patient');
 	alert('העדכון בוצע בהצלחה!');
-	localStorage.removeItem('patient_id');
+	sessionStorage.removeItem('patient_id');
 	location.href = `main.html`;
 }
