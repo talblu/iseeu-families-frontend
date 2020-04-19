@@ -10,6 +10,7 @@
     z-index: 100;
     width: 100vw;
     height: 100vh;
+    background-color: rgba(96, 163, 188, 0.2);
     background-image: url("https://gifimage.net/wp-content/uploads/2018/04/loader-gif-transparent-background-1.gif");
     background-repeat: no-repeat;
     background-position: center;

@@ -29,6 +29,7 @@ label {
 .user_card {
 	overflow: scroll;
 	width: 100%;
+	height: 92%;
 	margin-top: auto;
 	margin-bottom: auto;
 	background: #cfe8e1;
