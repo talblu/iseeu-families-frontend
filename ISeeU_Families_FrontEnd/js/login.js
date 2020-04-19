@@ -3,7 +3,7 @@ async function login ()
 	const userData = {}
 	userData.email = document.getElementById("e-mail_input").value;
 	userData.password = document.getElementById("password_input").value;
-	userData.hospital = document.getElementById("hospitals_list").value;
+	userData.hospital = location.href.substring(8, location.href.indexOf(','));
 
 	document.getElementById('error').style = 'display: none';
 

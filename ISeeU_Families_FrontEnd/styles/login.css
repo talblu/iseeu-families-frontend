@@ -8,11 +8,12 @@ body, html {
 #heading {
 	font-family: 'Pacifico', cursive;
 	color: #4d8bc9;
+	margin-bottom: 1.2rem;
 	letter-spacing: 2px;
 }
 
 .user_card {
-	height: 420px;
+	height: 400px;
 	width: 400px;
 	margin-top: auto;
 	margin-bottom: auto;
@@ -47,26 +48,7 @@ body, html {
 }
 
 .form_container {
-	margin-top: 85px;
-}
-
-#hospitals_list {
-	width: 250px;
-	border: 0px;
-	outline: none;
-	background: #edf4fc;
-	direction: rtl;
-	float: right;
-}
-
-.hospitals_list_container {
-	border-radius: 36px;
-	border:1px solid #cccccc;
-	height: 38px;
-	width: 250px;
-	display: inline-block;
-		overflow: hidden;
-		margin: auto;
+	margin-top: 60px;
 }
 
 .login_btn {

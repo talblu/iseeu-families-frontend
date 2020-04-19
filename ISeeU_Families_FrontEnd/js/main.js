@@ -1,6 +1,4 @@
-// const urlParams = new URLSearchParams(window.location.search);
-// const hospital = urlParams.get('hospital');
-const hospital = localStorage.getItem('hospital');
+const hospital = location.href.substring(8, location.href.indexOf(','));
 
 const dataToSend = {};
 dataToSend.hospital = hospital;

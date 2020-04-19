@@ -1,7 +1,4 @@
-// const urlParams = new URLSearchParams(window.location.search);
-// const hospital = urlParams.get('hospital');
-
-const hospital = localStorage.getItem('hospital');
+const hospital = location.href.substring(8, location.href.indexOf(','));
 
 const dataToSend = {};
 dataToSend.hospital = hospital;
@@ -28,15 +25,17 @@ const createPatient = async () => {
 	const form = document.querySelectorAll('.form-control');
 	dataToSend.medical_info = {};
 	for (let input of form) {
-		if (input.id.startsWith('med_'))
-			dataToSend.medical_info[input.id.substring(4)] = input.value;
-		else {
-			if (input.id === 'phone_list') {
-				input.value = input.value.replace(/\s/g,'');
-				dataToSend[input.id] = input.value.split(',');
+		if (input.value !== "") {
+			if (input.id.startsWith('med_'))
+				dataToSend.medical_info[input.id.substring(4)] = input.value;
+			else {
+				if (input.id === 'phone_list') {
+					input.value = input.value.replace(/\s/g,'');
+					dataToSend[input.id] = input.value.split(',');
+				}
+				else
+					dataToSend[input.id] = input.value;
 			}
-			else
-				dataToSend[input.id] = input.value;
 		}
 	}
 
