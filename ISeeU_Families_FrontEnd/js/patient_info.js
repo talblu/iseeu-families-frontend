@@ -2,7 +2,6 @@ const hospital = location.href.substring(8, location.href.indexOf('.'));
 const patientId = sessionStorage.getItem('patient_id');
 
 const dataToSend = {};
-dataToSend.token = sessionStorage.getItem('token');
 dataToSend.patient_id = patientId;
 dataToSend.hospital = hospital;
 
