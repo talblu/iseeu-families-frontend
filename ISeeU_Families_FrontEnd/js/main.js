@@ -20,16 +20,25 @@ async function getAllPatients() {
 	if (response.status == 401) {
 		sessionStorage.clear();
         location.href = `login.html`;
+        return;
     }
 
 	let data = await response.json();
 	let patientsList = document.getElementById("patients_list");
-	data.forEach(patient => {
-		const currPatient = document.createElement('option');
-		currPatient.value = patient;
-		currPatient.innerHTML = patient;
-		patientsList.appendChild(currPatient);
-	})
+	if (!data.length) {
+        const currPatient = document.createElement('option');
+        currPatient.value = "No Patients";
+        currPatient.innerHTML = "";
+        patientsList.appendChild(currPatient);
+	}
+	else {
+        data.forEach(patient => {
+            const currPatient = document.createElement('option');
+            currPatient.value = patient;
+            currPatient.innerHTML = patient;
+            patientsList.appendChild(currPatient);
+        });
+    }
 	return data;
 }
 
